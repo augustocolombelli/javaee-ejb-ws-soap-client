@@ -5,9 +5,9 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.com.server.webservice;
+package br.com.client.webservice;
 
-public class PersonWSServiceLocator extends org.apache.axis.client.Service implements br.com.server.webservice.PersonWSService {
+public class PersonWSServiceLocator extends org.apache.axis.client.Service implements br.com.client.webservice.PersonWSService {
 
     public PersonWSServiceLocator() {
     }
@@ -39,7 +39,7 @@ public class PersonWSServiceLocator extends org.apache.axis.client.Service imple
         PersonWSPortWSDDServiceName = name;
     }
 
-    public br.com.server.webservice.PersonWS getPersonWSPort() throws javax.xml.rpc.ServiceException {
+    public br.com.client.webservice.PersonWS getPersonWSPort() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
             endpoint = new java.net.URL(PersonWSPort_address);
@@ -50,9 +50,9 @@ public class PersonWSServiceLocator extends org.apache.axis.client.Service imple
         return getPersonWSPort(endpoint);
     }
 
-    public br.com.server.webservice.PersonWS getPersonWSPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public br.com.client.webservice.PersonWS getPersonWSPort(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            br.com.server.webservice.PersonWSServiceSoapBindingStub _stub = new br.com.server.webservice.PersonWSServiceSoapBindingStub(portAddress, this);
+            br.com.client.webservice.PersonWSServiceSoapBindingStub _stub = new br.com.client.webservice.PersonWSServiceSoapBindingStub(portAddress, this);
             _stub.setPortName(getPersonWSPortWSDDServiceName());
             return _stub;
         }
@@ -72,8 +72,8 @@ public class PersonWSServiceLocator extends org.apache.axis.client.Service imple
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (br.com.server.webservice.PersonWS.class.isAssignableFrom(serviceEndpointInterface)) {
-                br.com.server.webservice.PersonWSServiceSoapBindingStub _stub = new br.com.server.webservice.PersonWSServiceSoapBindingStub(new java.net.URL(PersonWSPort_address), this);
+            if (br.com.client.webservice.PersonWS.class.isAssignableFrom(serviceEndpointInterface)) {
+                br.com.client.webservice.PersonWSServiceSoapBindingStub _stub = new br.com.client.webservice.PersonWSServiceSoapBindingStub(new java.net.URL(PersonWSPort_address), this);
                 _stub.setPortName(getPersonWSPortWSDDServiceName());
                 return _stub;
             }

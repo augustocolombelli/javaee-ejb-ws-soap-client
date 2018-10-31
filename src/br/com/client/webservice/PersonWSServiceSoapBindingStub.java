@@ -5,9 +5,9 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.com.server.webservice;
+package br.com.client.webservice;
 
-public class PersonWSServiceSoapBindingStub extends org.apache.axis.client.Stub implements br.com.server.webservice.PersonWS {
+public class PersonWSServiceSoapBindingStub extends org.apache.axis.client.Stub implements br.com.client.webservice.PersonWS {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
     private java.util.Vector cachedSerFactories = new java.util.Vector();
@@ -26,7 +26,7 @@ public class PersonWSServiceSoapBindingStub extends org.apache.axis.client.Stub 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getAllPersons");
         oper.setReturnType(new javax.xml.namespace.QName("http://webservice.server.com.br/", "person"));
-        oper.setReturnClass(br.com.server.webservice.Person[].class);
+        oper.setReturnClass(br.com.client.webservice.Person[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "persons"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -65,7 +65,7 @@ public class PersonWSServiceSoapBindingStub extends org.apache.axis.client.Stub 
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
             qName = new javax.xml.namespace.QName("http://webservice.server.com.br/", "person");
             cachedSerQNames.add(qName);
-            cls = br.com.server.webservice.Person.class;
+            cls = br.com.client.webservice.Person.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -136,7 +136,7 @@ public class PersonWSServiceSoapBindingStub extends org.apache.axis.client.Stub 
         }
     }
 
-    public br.com.server.webservice.Person[] getAllPersons() throws java.rmi.RemoteException {
+    public br.com.client.webservice.Person[] getAllPersons() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -160,9 +160,9 @@ public class PersonWSServiceSoapBindingStub extends org.apache.axis.client.Stub 
         else {
             extractAttachments(_call);
             try {
-                return (br.com.server.webservice.Person[]) _resp;
+                return (br.com.client.webservice.Person[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.com.server.webservice.Person[]) org.apache.axis.utils.JavaUtils.convert(_resp, br.com.server.webservice.Person[].class);
+                return (br.com.client.webservice.Person[]) org.apache.axis.utils.JavaUtils.convert(_resp, br.com.client.webservice.Person[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

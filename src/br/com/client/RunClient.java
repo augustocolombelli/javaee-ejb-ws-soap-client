@@ -1,10 +1,10 @@
-package br.com.server;
+package br.com.client;
 
 import java.rmi.RemoteException;
 
-import br.com.server.webservice.Person;
-import br.com.server.webservice.PersonWS;
-import br.com.server.webservice.PersonWSProxy;
+import br.com.client.webservice.Person;
+import br.com.client.webservice.PersonWS;
+import br.com.client.webservice.PersonWSProxy;
 
 public class RunClient {
 
